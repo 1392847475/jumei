@@ -44,52 +44,41 @@ $(function(){
 	
 	
 	$(document).scroll(function(){
-				if($(document).scrollTop()>500){
-					$("#left_lt_ul").css("display","block")
+				if($(document).scrollTop()>=500){
+					$("#left_lt").css("display","block")
 				}else{
-					$("#left_lt_ul").css("display","none")
+					$("#left_lt").css("display","none")
 				};
-				if($(document).scrollTop()>3000){
-					$(".lt_li2").css("background","#f76199");
-					$(".lt_li2").siblings().css("background","#fff");
+				if($(document).scrollTop()<2200){
+					$("#left_lt_ul").find("a").css({"background-position-x":"0","color":"#8f8f8f"});
 				}
-				if($(document).scrollTop()>5000){
-					$(".lt_li3").css("background","#f76199");
-					$(".lt_li3").siblings().css("background","#fff");
-				}
-				if($(document).scrollTop()>7000){
-					$(".lt_li4").css("background","#f76199");
-					$(".lt_li4").siblings().css("background","#fff");
-				}
-				
-				
-				
-				
-				
-				
-				/*var index1 = Math.floor($(document).scrollTop()/600)
-				console.log(index1)
-				var oli = $("li").get(index1)
-				$("li").css("background","")
-				$(oli).css("background","red")
-			$("li").mouseover(function(){
-				$(this).addClass("red")
-			}).mouseout(function(){
-				$(this).removeClass()
-			});
-			$("li").click(function(){
-				$("li").css("background","")
-				$(this).css("background","red")
-				var index = $("li").index(this);
-					if(index==9){
+				if($(document).scrollTop()>=2200){
+					$(".lt_li2").find("a").css({"background-position-x":"-176px","color":"#fff"});
+					$(".lt_li2").siblings().find("a").css({"background-position-x":"0","color":"#8f8f8f"});
+				};
+				if($(document).scrollTop()>=4700){
+					$(".lt_li3").find("a").css({"background-position":"-177px -125px","color":"#fff"});
+					$(".lt_li3").siblings().find("a").css({"background-position-x":"0","color":"#8f8f8f"});
+				};
+				if($(document).scrollTop()>=7700){
+					$(".lt_li4").find("a").css({"background-position":"-177px -187px","color":"#fff"});
+					$(".lt_li4").siblings().find("a").css({"background-position-x":"0","color":"#8f8f8f"});
+				};
+				$(".lt_li1").click(function(){
 					$(document).scrollTop(0);
-				}else{
-					$(document).scrollTop(index*600);
-				}
-			})*/
-			
-			
-			
+				})
+				$(".lt_li2").click(function(){
+					$(document).scrollTop(2200);
+				})
+				$(".lt_li3").click(function(){
+					$(document).scrollTop(4800);
+				})
+				$(".lt_li4").click(function(){
+					$(document).scrollTop(7800);
+				})
+				$(".right_li").click(function(){
+				$(document).scrollTop(0);
+				})
 			});
 	
 	

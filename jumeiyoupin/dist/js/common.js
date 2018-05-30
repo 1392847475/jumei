@@ -80,15 +80,63 @@ $(function(){
 				$(document).scrollTop(0);
 				})
 			});
+			
+			$("#dl_rad1").prop('checked',true);
+			$("#dl_rad1").click(function(){
+				if($("#dl_rad1").prop('checked',true)){
+				$("#dl_rad2").prop('checked',false);
+				$(".dl_sj").css("display","block");
+				$(".dl_pt").css("display","none")
+			}
+				
+			});
+			
+			$("#dl_rad2").click(function(){
+				
+				if($("#dl_rad2").prop('checked',true)){
+				$("#dl_rad1").prop('checked',false);
+				$(".dl_pt").css("display","block");
+				$(".dl_sj").css("display","none")
+				
+			}
+				
+			})
+
+			
+			
+	
+		$(function(){
+			$("#zc_dl").click(function(){
+				$.post("http://h6.duchengjiu.top/shop/api_user.php",{"status":"register","username":$("#zc_inp1").val(),"password":$("#zc_inp4").val},function(data){
+					console.log(data);
+					if(data.code==0){
+						window.location.href="../index.html";
+					}
+				});
+				
+			});
+			
+		});
+
 	
 	
+	$(function(){
+			$("#dl_dl2").click(function(){
+				console.log("aa")
+				$.post("http://h6.duchengjiu.top/shop/api_user.php",{"status":"login","username":$("#dl_inp1").val(),"password":$("#dl_inp2").val},function(data){
+					console.log(data);
+					if(data.code==0){
+						window.location.href="../index.html";
+					}else{
+						alert(data.message)
+					}
+				});
+				
+			});
+			
+		});
 	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	

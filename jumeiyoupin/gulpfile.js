@@ -7,9 +7,6 @@ var rename = require("gulp-rename");
 var cleanCss = require("gulp-clean-css")
 
 
-
-
-
 gulp.task("copy-index",function(){
 	gulp.src("index.html").pipe(gulp.dest("dist")).pipe(connect.reload());
 })
@@ -31,14 +28,12 @@ gulp.task("copy-image",function(){
 gulp.task("concat",function(){
 	gulp.src(["js/a.js","js/b.js"]).pipe(concat("common.js"))
 	.pipe(gulp.dest("dist/js"))
-	
 	.pipe(uglify())
 	.pipe(rename("common.min.js"))
 	.pipe(gulp.dest("dist/js"))
 	.pipe(connect.reload());
 	gulp.src("js/jquery.js")
 	.pipe(concat("jquery.min.js"))
-	.pipe(uglify())
 	.pipe(gulp.dest("dist/js"));
 })
 
@@ -56,7 +51,7 @@ gulp.task("watch",function(){
 	gulp.watch("html/*.html",["copy-html"]);
 	gulp.watch("sass/*.scss",["copy-sass"]);
 	gulp.watch("img/**",["copy-image"]);
-	gulp.watch("js/**.js",["concat"])
+	gulp.watch("js/*.js",["concat"])
 })
 gulp.task("default",["server","watch"]);
 

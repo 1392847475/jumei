@@ -102,20 +102,16 @@ $(function(){
 				
 			})
 
-			
-			
-	
+		setCookie("",,7)
 		$(function(){
 			$("#zc_dl").click(function(){
-				$.post("http://h6.duchengjiu.top/shop/api_user.php",{"status":"register","username":$("#zc_inp1").val(),"password":$("#zc_inp4").val},function(data){
+				$.post("http://h6.duchengjiu.top/shop/api_user.php",{"status":"register","username":$("#zc_inp1").val(),"password":$("#zc_inp5").val},function(data){
 					console.log(data);
 					if(data.code==0){
 						window.location.href="../index.html";
 					}
 				});
-				
 			});
-			
 		});
 
 	
@@ -137,6 +133,22 @@ $(function(){
 		});
 	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
